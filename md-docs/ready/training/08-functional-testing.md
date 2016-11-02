@@ -14,6 +14,15 @@ In this lesson you'll learn how to perform functional tests on your Couchbase Mo
   </a>
 </div>
 
+<block class="net" />
+
+<div class="buttons-unit downloads">
+  <a href="#" class="button" id="project">
+    <img src="img/download-vs.png">
+  </a>
+</div>
+
+
 <block class="all" />
 
 ## Introduction
