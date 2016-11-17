@@ -77,7 +77,6 @@ Following are configuration properties for configuration of the Sync Gateway ser
 |`maxFileDescriptors`|`integer`|Maximum number of open file descriptors (RLIMIT_NOFILE). _Not available on Windows_. The default is `5000`.|
 |`maxHeartbeat`|`integer`|Maximum heartbeat value for `_changes` feed requests (in seconds). The default is no maximum.|
 |`maxIncomingConnections`|`integer`|Maximum number of incoming HTTP connections to accept. The default is no maximum.|
-|`persona`|Mozilla Persona configuration property|Configuration for Mozilla Persona authentication. See Mozilla Persona configuration. There is no default.|
 |`pretty`|`Boolean`|Whether to pretty-print JSON responses. The default is `false`.|
 |`profileInterface`|`string`|TCP network address (IP address and the port) that the Go profile API listens on. You can obtain go profiling information from the interface. You can omit the IP address. There is no default.|
 |`serverReadTimeout`|`integer`|Maximum duration in seconds before timing out the read of an HTTP(S) request. The default is no timeout.|
@@ -139,7 +138,7 @@ Following are the configuration properties for a specific database:
 |`password`|`string`|Bucket password for authenticating to Couchbase Server. There is no default.|
 |`pool`|`string`|	Couchbase pool name. The default is the string `default`.|
 |`rev_cache_size`|`integer`|Size of the revision cache, specified as the total number of document revisions to cache in memory for all recently accessed documents. When the revision cache is full, Sync Gateway removes less recent document revisions to make room for new document revisions. Adjust this property to tune memory consumption by Sync Gateway, for example on servers with less memory and in cases when Sync Gateway creates many new documents and/or updates many documents relative to the number of read operations. The default is `5000`.|
-|`revs_limit`|`integer`|Maximum depth to which a document's revision tree can grow. **Note:** If you use bucket shadowing, setting revs_limit to a value that is too small relative to the frequency of document revisions can have negative consequences. Bucket shadowing needs the revision history to be maintained until pending revisions are reconciled.|
+|`revs_limit`|`integer`|Maximum depth to which a document's revision tree can grow.|
 |`roles`|`Roles to create`|Array of initial roles with their properties. There is no default.|
 |`server`|`string`|Couchbase Server (or Walrus) URL. The default is `walrus:`.|
 |`sync`|`string`|Sync function, which defines which users can read, update, or delete which documents. The default is a default sync function. For more information, see the section Sync function API.|
@@ -159,17 +158,6 @@ Following is the property that you can define for the server configuration prope
 |`register`|`Boolean`|Whether the Facebook Login server will register new user accounts (`true` or `false`). The default is `false`.|
 
 For more information about Facebook authentication, see Facebook authentication.
-
-## Mozilla Persona configuration
-
-Following are the properties that you can define for the server configuration property `persona`:
-
-|Property|Type|Description and default|
-|:-------|:---|:----------------------|
-|`origin`|`string`|URL of Mozilla Persona Identity Provider (IdP) server for Persona authentication. There is no default.|
-|`register`|`Boolean`|Whether the Mozilla Persona IdP server will register new user accounts (true or false). The default is `false`.|
-
-For more information about Mozilla Persona authentication, see Mozilla Persona authentication.
 
 ## CORS configuration
 
